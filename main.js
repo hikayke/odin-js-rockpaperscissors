@@ -1,3 +1,6 @@
+let humanScore = 0;
+let computerScore = 0;
+
 function getRandomNum(max) {
     return Math.floor(Math.random() * 3);
 }
@@ -7,31 +10,42 @@ function getComputerChoice() {
     let randomNumber = getRandomNum();
 
     if (randomNumber === 0) {
-        return "Rock";
+        return "rock";
     } else if (randomNumber === 1) {
-        return "Paper";
+        return "paper";
     } else {
-        return "Scissors";
+        return "scissors";
     }
 
 }
 
-function getHumanChoice() {
+function getRawHumanChoice() {
     let choice = prompt("Do you choose rock, paper or scissors?");
     return choice;
 }
 
-function validateHumanChoice() {
-    let regularHumanChoice = getHumanChoice();
+function getHumanChoice() {
+    let regularHumanChoice = getRawHumanChoice();
     let humanChoice = regularHumanChoice.toLowerCase();
 
     if (humanChoice === "rock" || humanChoice === "scissors" || humanChoice === "paper" ) {
         return humanChoice;
     } else {
-       alert("Please choose between rock, paper or scissors. Check for any spelling errors.");
+       alert("Please choose between rock, paper or scissors and check for any spelling errors. F5 to retry.");
        return
     }
 
 }
 
-console.log(validateHumanChoice());
+const humanChoice = getHumanChoice();
+const computerChoice = getComputerChoice();
+
+function playRound(humanChoice, computerChoice) {
+
+    if (humanChoice === computerChoice) {
+        return `It's a draw! You both chose ${computerChoice}.`
+    }
+
+}
+
+console.log(getHumanChoice());
