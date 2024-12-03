@@ -4,7 +4,7 @@ function getRandomNum(max) {
 
 function getComputerChoice() {
 
-    let randomNumber = getRandomNum()
+    let randomNumber = getRandomNum();
 
     if (randomNumber === 0) {
         return "Rock";
@@ -17,7 +17,21 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-    prompt("Do you choose rock, paper or scissors?")
+    let choice = prompt("Do you choose rock, paper or scissors?");
+    return choice;
 }
 
-console.log(getHumanChoice());
+function validateHumanChoice() {
+    let regularHumanChoice = getHumanChoice();
+    let humanChoice = regularHumanChoice.toLowerCase();
+
+    if (humanChoice === "rock" || humanChoice === "scissors" || humanChoice === "paper" ) {
+        return humanChoice;
+    } else {
+       alert("Please choose between rock, paper or scissors. Check for any spelling errors.");
+       return
+    }
+
+}
+
+console.log(validateHumanChoice());
