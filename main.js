@@ -78,8 +78,7 @@ function playGame() {
 
         console.log(playRound(humanSelection, computerSelection)); 
     }
-    console.log("We're done for today!")
-    console.log(`Ladies, gentleman, and non-binary folks! We're done for today!
+    console.log(`We're done for today!
 
 The final score was:
 -----------------------------------------------
